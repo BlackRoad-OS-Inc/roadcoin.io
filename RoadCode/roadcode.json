@@ -1,0 +1,25 @@
+{
+  "name": "roadcoin.io",
+  "org": "BlackRoad-OS-Inc",
+  "category": "crypto",
+  "title": "RoadCoin",
+  "deploy": {
+    "target": "gematria",
+    "path": "/var/www/blackroad/roadcoin.io",
+    "ssl": "auto",
+    "cdn": true
+  },
+  "mirrors": {
+    "gitea": "https://git.blackroad.io/BlackRoad-OS-Inc/roadcoin.io",
+    "github": "https://github.com/BlackRoad-OS-Inc/roadcoin.io"
+  },
+  "ci": {
+    "on_push": ["build", "deploy"],
+    "on_pr": ["lint", "audit"]
+  },
+  "monitoring": {
+    "uptime": true,
+    "analytics": "roadanalytics",
+    "alerts": "nats"
+  }
+}
